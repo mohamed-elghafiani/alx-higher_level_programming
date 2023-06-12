@@ -1,5 +1,5 @@
-### 0x01. Python - if/else, loops, functions
-### `Python`
+## 0x01. Python - if/else, loops, functions
+## `Python`
 
 ## Learning Objectives
 * Why Python programming is awesome
