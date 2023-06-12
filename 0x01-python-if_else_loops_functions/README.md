@@ -1,7 +1,7 @@
-## 0x01. Python - if/else, loops, functions
-## `Python`
+### 0x01. Python - if/else, loops, functions
+### `Python`
 
-# Learning Objectives
+## Learning Objectives
 * Why Python programming is awesome
 * Why indentation is so important in Python
 * How to use the `if`, `if ... else` statements
