@@ -7,4 +7,3 @@ for i in range(9):
             break
 
         print("{}{}".format(i, j), end=", ")
-
