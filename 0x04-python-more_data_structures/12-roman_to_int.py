@@ -11,7 +11,7 @@ romans = {
 
 def roman_to_int(roman_string):
     roman_int = 0
-    if not roman_string:
+    if not roman_string or not isinstance(roman_string, str):
         return roman_int
 
     for key in reversed(romans.keys()):
