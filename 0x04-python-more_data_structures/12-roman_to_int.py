@@ -10,10 +10,10 @@ romans = {
 
 
 def roman_to_int(roman_string):
-    if not roman_string:
-        return None
-
     roman_int = 0
+    if not roman_string:
+        return roman_int
+
     for key in reversed(romans.keys()):
         if key in roman_string:
             roman_int += romans[key]
