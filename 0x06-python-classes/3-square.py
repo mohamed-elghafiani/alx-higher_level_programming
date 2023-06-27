@@ -7,7 +7,10 @@
 
 class Square:
     """
-       This class represents a square
+        This class represents a square
+
+        Methods:
+       
     """
 
     def __init__(self, size=0):
@@ -27,6 +30,7 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = size
+
     def area(self):
         """
             This method returns the current square area
