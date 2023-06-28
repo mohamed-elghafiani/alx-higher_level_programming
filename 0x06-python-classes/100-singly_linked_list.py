@@ -48,10 +48,10 @@ class Node():
         """
             Sets the next node in a linked list
         """
-        # if not isinstance(next_node, Node) or not None:
-        # raise TypeError("next_node must be a Node object")
-        # else:
-        self.__next_node = next_node
+        if not isinstance(next_node, Node) and next_node is not None:
+            raise TypeError("next_node must be a Node object")
+        else:
+            self.__next_node = next_node
 
 
 class SinglyLinkedList():
@@ -94,7 +94,7 @@ class SinglyLinkedList():
 
         node = self.__head
         data = []
-        while sll:
+        while node:
             data.append(str(node.data))
             node = node.next_node
         return "\n".join(data)
