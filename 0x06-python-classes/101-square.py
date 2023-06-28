@@ -95,6 +95,8 @@ class Square:
     def my_print(self):
         """
             Prints in stdout the square with the character #
+            - if size is equal to 0, print an empty line
+            - position should be use by using space
         """
         if self.__size == 0:
             return ""
@@ -106,7 +108,7 @@ class Square:
         for _ in range(self.__size):
             data += " " * self.__position[0]
             data += "#" * self.__size + "\n"
-        return data
+        return data[:-1]
 
     def __str__(self):
         return self.my_print()
