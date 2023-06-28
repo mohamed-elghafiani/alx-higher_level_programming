@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-import math
 
 """
     This module defines the MagicClass class
 """
+
+import math
 
 
 class MagicClass():
