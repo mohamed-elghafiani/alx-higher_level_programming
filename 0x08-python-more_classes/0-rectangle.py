@@ -7,4 +7,6 @@ Use Cases:
 
 
 class Rectangle():
+    """Defines a rectangle
+    """
     pass
