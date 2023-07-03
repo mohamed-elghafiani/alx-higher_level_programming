@@ -24,7 +24,6 @@ Other than asking the question like:
 <BLANKLINE>
 How are you doing?
 <BLANKLINE>
-<BLANKLINE>
 
 ::
 >>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. \

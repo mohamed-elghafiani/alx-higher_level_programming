@@ -28,6 +28,6 @@ def text_indentation(text):
     # if character is at the end of text
     for char in "?.:":
         if char == text[-1]:
-            text = text.replace(char, char + "\n\n")
+            text = text.replace(char, char + "\n")
 
     print(text)
