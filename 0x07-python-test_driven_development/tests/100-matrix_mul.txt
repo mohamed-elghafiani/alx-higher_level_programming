@@ -1,0 +1,54 @@
+# 100-matrix_mul.txt
+
+====================================
+ How to use 100-matrix_mul.py
+====================================
+The file contains the implimentation of a function that multiplies 2 matrices ``matrix_mul(m_a, m_b)``
+The matrices passed as arguments (m_a and m_b) are lists of lists
+ - The function raises TypeError if m_a and m_b are not a list of lists of integers/floats
+ - The funtcion raises ValueError if the lists are empty or the two matrices can't be multiplied
+
+The follwoing are some test cases showing its behavior
+
+::
+# Importing the function
+>>> matrix_mul = __import__("100-matrix_mul").matrix_mul
+
+::
+>>> matrix_mul([[1, 2], [3, 4]], [[5, 6], [7, 8]])
+[[19, 22], [43, 50]]
+
+::
+>>> matrix_mul([[1, 2], [3, 4]], [[5, 6]])
+Traceback (most recent call last):
+	...
+ValueError: m_a and m_b can't be multiplied
+
+::
+>>> matrix_mul([[1, 2], [3, 4]], [[5, 6], [7, "8"]])
+Traceback (most recent call last):
+	...
+TypeError: m_b should contain only integers or floats
+
+::
+>>> matrix_mul([[1, 2], [3, 4]], [[5, 6], [7, 8, 9]])
+Traceback (most recent call last):
+	...
+TypeError: each row of m_b must be of the same size
+
+::
+>>> matrix_mul([[1, 2], [3, 4]], [[]])
+Traceback (most recent call last):
+	...
+ValueError: m_b can't be empty
+
+::
+>>> matrix_mul([[1, 2], [3, 4]], [])
+Traceback (most recent call last):
+	...
+ValueError: m_b can't be empty
+
+::
+>>> matrix_mul([[1.12, 2.65], [3.82, 4.9]], [[5.0, 6.9], [7.0, 8.9]])
+[[24.150000000000002, 31.313000000000002], [53.400000000000006, 69.968]]
+ 
