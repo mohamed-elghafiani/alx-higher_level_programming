@@ -14,6 +14,14 @@ class TestMaxInteger(unittest.TestCase):
         list1 = [1, 2, 3, 4]
         self.assertEqual(max_integer(list1), 4)
 
-    def test_max_list2(self):
-        list2 = [5, -10, 2, 0, -2]
+    def test_max_middle(self):
+        list2 = [1, 2, 5, 3, 4]
         self.assertEqual(max_integer(list2), 5)
+
+    def test_max_list2(self):
+        list3 = [5, -10, 2, 0, -2]
+        self.assertEqual(max_integer(list3), 5)
+
+    def test_max_oneel(self):
+        list4 = [1]
+        self.assertEqual(max_integer(list4), 1)
