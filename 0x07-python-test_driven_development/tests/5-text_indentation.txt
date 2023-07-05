@@ -24,6 +24,7 @@ Other than asking the question like:
 <BLANKLINE>
 How are you doing?
 <BLANKLINE>
+<BLANKLINE>
 
 ::
 >>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
@@ -68,3 +69,9 @@ Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres
 Traceback (most recent call last):
 	...
 TypeError: text must be a string
+
+::
+>>> text_indentation()
+Traceback (most recent call last):
+	...
+TypeError: text_indentation() missing 1 required positional argument: 'text'

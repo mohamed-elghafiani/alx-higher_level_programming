@@ -21,13 +21,11 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    text = text.replace("? ", "?\n\n")
-    text = text.replace(". ", ".\n\n")
-    text = text.replace(": ", ":\n\n")
-
-    # if character is at the end of text
-    for char in "?.:":
-        if char == text[-1]:
-            text = text.replace(char, char + "\n")
+    text = text.replace("? ", "?")
+    text = text.replace(": ", ":")
+    text = text.replace(". ", ".")
+    text = text.replace("?", "?\n\n")
+    text = text.replace(".", ".\n\n")
+    text = text.replace(":", ":\n\n")
 
     print(text)
