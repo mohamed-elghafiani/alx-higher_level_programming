@@ -14,4 +14,7 @@ data = []
 if os.path.isfile(filename):
     data = load_from_json_file(filename)
 
-save_to_json_file(data.append(argv), filename)
+if argv:
+    for arg in argv:
+        data.append(arg)
+save_to_json_file(data, filename)
