@@ -144,7 +144,7 @@ class Rectangle(Base):
         Returns:
             str: The string representation of the rectangle
         """
-        s1 = "[Rectangle] ({})".format(self.id)
+        s1 = "[Rectangle] ({}) ".format(self.id)
         s2 = "{}/{}".format(self.__x, self.__y)
         s3 = " - {}/{}".format(self.__width, self.__height)
         return s1 + s2 + s3
