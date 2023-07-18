@@ -21,6 +21,7 @@ class Rectangle(Base):
           height (int): The height of the rectangle
           x (int): The x position
           y (int): The y position
+          id (int): The instance ID
         """
         super().__init__(id)
         self.width = width
@@ -30,7 +31,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """Returns the width of the rectangle
+        """int: The width of the rectangle
         """
         return self.__width
 
@@ -40,6 +41,10 @@ class Rectangle(Base):
 
         Args:
           value (int): The value of to assign for self.__width
+
+        Raises:
+            TypeError: If the value is not an integer.
+            ValueError: If the value is less than or equal to 0.
         """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
@@ -49,7 +54,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """Returns the rectangle's hight
+        """int: The height of the rectangle
         """
         return self.__height
 
@@ -59,6 +64,10 @@ class Rectangle(Base):
 
         Args:
           value (int): the value to assign for height
+        
+        Raises:
+            TypeError: If the value is not an integer.
+            ValueError: If the value is less than or equal to 0.
         """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
@@ -68,7 +77,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """Returns the x position of the rectangle
+        """int: The x position of the rectangle
         """
         return self.__x
 
@@ -78,6 +87,10 @@ class Rectangle(Base):
 
         Args:
           value (int): The value to assign for x
+
+        Raises:
+            TypeError: If the value is not an integer.
+            ValueError: If the value is less than 0.
         """
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
@@ -87,7 +100,7 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """Returns the y position of the rectangle
+        """int: The y position of the rectangle
         """
         return self.__y
 
@@ -97,6 +110,10 @@ class Rectangle(Base):
 
         Args:
           value (int): The value to assign for y
+
+        Raises:
+          TypeError: If the value is not an integer.
+          ValueError: If the value is less than or equal to 0.
         """
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
@@ -105,7 +122,10 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        """Returns the rectangle's area
+        """Calculates the area of the rectangle
+
+        Returns:
+          int : The area of the rectangle
         """
         return self.__width * self.__height
 
