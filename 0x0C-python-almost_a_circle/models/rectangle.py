@@ -8,6 +8,19 @@ class Rectangle(Base):
     """Rectangle class implimentation"""
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initiates an instance of rectangle
+
+        Args:
+          width (int): The width of the rectangle
+          height (int): The height of the rectangle
+          x (int): The x position
+          y (int): The y position
+          id (int): The instance id
+
+        Attributes:
+          width (int): The width of the rectangle
+          height (int): The height of the rectangle
+          x (int): The x position
+          y (int): The y position
         """
         super().__init__(id)
         self.width = width
@@ -24,6 +37,9 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """Sets the value of rectangle's width
+
+        Args:
+          value (int): The value of to assign for self.__width
         """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
@@ -40,6 +56,9 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """Sets the rectangle's height
+
+        Args:
+          value (int): the value to assign for height
         """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
@@ -56,6 +75,9 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """Sets the x position of the rectangle
+
+        Args:
+          value (int): The value to assign for x
         """
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
@@ -72,6 +94,9 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """Sets the y position of the rectangle
+
+        Args:
+          value (int): The value to assign for y
         """
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
@@ -101,6 +126,9 @@ class Rectangle(Base):
 
     def update(self, *args):
         """Update the rectangle instance's public attributes
+
+        Args:
+          args: A list of args
         """
         id, width, height, x, y = (None, ) * 5
         if args is not None:
