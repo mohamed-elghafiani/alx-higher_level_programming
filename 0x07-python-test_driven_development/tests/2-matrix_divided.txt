@@ -60,8 +60,8 @@ TypeError: matrix_divided() missing 1 required positional argument: 'div'
 >>> matrix_divided([[1, nan], [1, 2]], nan)
 Traceback (most recent call last):
   ...
-NameError: name 'nan' is not define
+NameError: name 'nan' is not defined
 
 ::
 >>> matrix_divided([[1, 2], [1, 2]], float("inf"))
-[[0.0, 0.0], [0.0, 0.0]]d
+[[0.0, 0.0], [0.0, 0.0]]
