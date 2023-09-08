@@ -57,7 +57,7 @@ Traceback (most recent call last):
 TypeError: matrix_divided() missing 1 required positional argument: 'div'
 
 ::
->>> matrix_divided([[1, nan], [1, 2]], 1)
+>>> matrix_divided([[1, nan], [1, 2]], nan)
 Traceback (most recent call last):
   ...
 NameError: name 'nan' is not defined
