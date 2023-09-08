@@ -6,7 +6,7 @@
 """
 
 
-def matrix_divided(matrix=[0], div=1):
+def matrix_divided(matrix=[[0]], div=1):
     """ matrix_divided divides all elements of a matrix by div
 
     Args:
