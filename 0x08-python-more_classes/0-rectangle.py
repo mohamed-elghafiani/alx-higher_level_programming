@@ -1,7 +1,12 @@
 #!/usr/bin/python3
-"""Rectangle Module
+"""Module containing the implimentation of the Rectangle Class
+
+Use Cases:
+    rect = Rectangle()
 """
 
 
-class Rectangle:
-   pass
+class Rectangle():
+    """Defines a rectangle
+    """
+    pass
