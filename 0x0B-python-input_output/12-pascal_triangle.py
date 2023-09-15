@@ -19,12 +19,12 @@ def pascal_triangle(n):
         nn = 2
         while nn < n:
             i = 1
-            l = [1]
+            line = [1]
             while i < len(list_[nn - 1]):
-                l.append(list_[nn - 1][i - 1] + list_[nn - 1][i])
+                line.append(list_[nn - 1][i - 1] + list_[nn - 1][i])
                 i += 1
-            l.append(1)
-            list_.append(l)
+            line.append(1)
+            list_.append(line)
             nn += 1
 
         return list_
