@@ -5,7 +5,7 @@ import re
 
 
 def parse_log():
-    i = 0
+    i = 1
     code_n = {}
     size = 0
     for line in sys.stdin:
