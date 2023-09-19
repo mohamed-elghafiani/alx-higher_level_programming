@@ -149,7 +149,7 @@ class Rectangle(Base):
         s3 = " - {}/{}".format(self.__width, self.__height)
         return s1 + s2 + s3
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Update the rectangle instance's public attributes
 
         Args:
@@ -184,4 +184,21 @@ class Rectangle(Base):
                 self.__width = width
                 self.__height = height
                 self.__x = x
+                self.__y = y
+
+        if kwargs is not None:
+            id = kwargs.get("id", None)
+            width = kwargs.get("width", None)
+            height = kwargs.get("height", None)
+            x = kwargs.get("x", None)
+            y = kwargs.get("y", None)
+
+            super().__init__(id if id else self.id)
+            if width:
+                self.__width = width
+            if height:
+                self.__height = height
+            if x:
+                self.__x = x
+            if y:
                 self.__y = y
