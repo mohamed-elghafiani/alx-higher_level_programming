@@ -4,11 +4,11 @@ import sys
 import re
 
 
-def parse_log():
+def parse_logs(logs):
     i = 1
     code_n = {}
     size = 0
-    for line in sys.stdin:
+    for line in logs:
         filtered = [el.strip() for el in re.findall(" [0-9]+", line)]
         size += int(filtered[-1])
 
@@ -27,4 +27,9 @@ def parse_log():
         i += 1
 
 
-parse_log()
+logs = []
+try:
+    for line in sys.stdin:
+        logs.append(line)
+except KeyboardInterrupt:
+    parse_logs(logs)
