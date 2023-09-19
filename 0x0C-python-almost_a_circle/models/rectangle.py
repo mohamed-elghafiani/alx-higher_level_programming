@@ -158,7 +158,7 @@ class Rectangle(Base):
         id, width, height, x, y = (None, ) * 5
         if args is not None:
             if len(args) == 1:
-                id = args
+                id = args[0]
                 super().__init__(id)
             elif len(args) == 2:
                 id, width = args
