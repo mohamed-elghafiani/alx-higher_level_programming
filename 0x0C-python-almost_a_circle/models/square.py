@@ -7,19 +7,19 @@ class Square(Rectangle):
     """"Square class"""
     def __init__(self, size, x=0, y=0, id=None):
         """"square instance initiator"""
-        super().__init__(width=size, height=size, x=x, y=y, id=id)
-        self.__size = size
-        self.__x = x
-        self.__y = y
+        super().__init__(width=size, height=size, id=id)
+        self._size = size
+        self.x = x
+        self.y = y
 
     def __str__(self):
         string = "[Square] ({}) {}/{} - {}"
-        return string.format(self.id, self.__x, self.__y, self.__size)
+        return string.format(self.id, self.x, self.y, self._size)
 
     @property
     def size(self):
         """size getter"""
-        return self.__size
+        return self._size
 
     @size.setter
     def size(self, value):
@@ -28,4 +28,4 @@ class Square(Rectangle):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
-        self.__size = value
+        self._size = value

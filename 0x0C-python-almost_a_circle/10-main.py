@@ -9,7 +9,11 @@ if __name__ == "__main__":
     print(s1.size)
     s1.size = 10
     print(s1)
-
+    
+    for value in vars(s1):
+        if isinstance(value, property):
+            print(value)
+    
     try:
         s1.size = "9"
     except Exception as e:
