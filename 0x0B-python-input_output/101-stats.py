@@ -1,35 +1,40 @@
 #!/usr/bin/python3
-"""Log Parsing"""
 import sys
-import re
+import signal
 
+# Initialize variables to store metrics
+total_file_size = 0
+status_code_counts = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
 
-def parse_logs(logs):
-    i = 1
-    code_n = {}
-    size = 0
-    for line in logs:
-        filtered = [el.strip() for el in re.findall(" [0-9]+", line)]
-        size += int(filtered[-1])
+# Function to handle KeyboardInterrupt (CTRL+C)
+def signal_handler(signal, frame):
+    print_stats()
+    sys.exit(0)
 
-        if code_n.get(filtered[-2], 0):
-            code_n[filtered[-2]] += 1
-        else:
-            code_n[filtered[-2]] = 1
+# Function to print statistics
+def print_stats():
+    print("File size: {}".format(total_file_size))
+    for status_code in sorted(status_code_counts):
+        if status_code_counts[status_code] > 0:
+            print("{}: {}".format(status_code, status_code_counts[status_code]))
 
-        if i == 10:
-            for (k, v) in sorted(code_n.items(), key=lambda item: item[0]):
-                sys.stdout.write("{}: {}\n".format(k, v))
-            sys.stdout.write("File size: {}\n".format(size))
-            code_n = {}
-            size = 0
-            i = 0
-        i += 1
+# Register the signal handler for KeyboardInterrupt
+signal.signal(signal.SIGINT, signal_handler)
 
+line_count = 0
 
-logs = []
-try:
-    for line in sys.stdin:
-        logs.append(line)
-except KeyboardInterrupt:
-    parse_logs(logs)
+# Read input line by line
+for line in sys.stdin:
+    line_count += 1
+    parts = line.split()
+    if len(parts) >= 7:
+        status_code = int(parts[-2])
+        file_size = int(parts[-1])
+        total_file_size += file_size
+        if status_code in status_code_counts:
+            status_code_counts[status_code] += 1
+
+    # Check if 10 lines have been processed
+    if line_count % 10 == 0:
+        print_stats()
+
