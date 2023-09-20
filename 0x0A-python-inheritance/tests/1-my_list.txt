@@ -15,15 +15,18 @@ True
 ::
 >>> mylist1.print_sorted()
 [0, 1, 4, 5]
+[0, 1, 4, 5]
 
 ::
 >>> mylist2 = MyList((0, 5, -1, -6))
 >>> mylist2.print_sorted()
 [-6, -1, 0, 5]
+[-6, -1, 0, 5]
 
 ::
 >>> mylist3 = MyList()
 >>> mylist3.print_sorted()
+[]
 []
 
 ::
@@ -35,6 +38,7 @@ True
 >>> mylist4
 [5, 0, -1, 9]
 >>> mylist4.print_sorted()
+[-1, 0, 5, 9]
 [-1, 0, 5, 9]
 
 ::
