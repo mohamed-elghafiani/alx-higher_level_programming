@@ -6,6 +6,9 @@ r = Rectangle(3, 5)
 print(r)
 print(dir(r))
 
+print(r.width)
+print(r.height)
+
 try:
     print("Rectangle: {} - {}".format(r.width, r.height))
 except Exception as e:
