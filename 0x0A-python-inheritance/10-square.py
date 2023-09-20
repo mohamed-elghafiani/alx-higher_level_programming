@@ -8,8 +8,8 @@ class Square(Rectangle):
     """Square class"""
     def __init__(self, size):
         """instnace initiator"""
-        super().__init__(size, size)
         self.__size = super().integer_validator("size", size)
+        super().__init__(size, size)
 
     def area(self):
         """Return the instance area"""
