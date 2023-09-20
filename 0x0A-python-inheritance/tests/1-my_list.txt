@@ -1,0 +1,22 @@
+# MyList module tests
+
+::
+>>> MyList = __import__("1-my_list").MyList
+
+::
+>>> issubclass(MyList, list)
+True
+
+::
+>>> mylist1 = MyList((5, 4, 1, 0))
+>>> mylist1
+[5, 4, 1, 0]
+
+::
+>>> mylist1.print_sorted()
+[0, 1, 4, 5]
+
+::
+>>> mylist2 = MyList((0, 5, -1, -6))
+>>> mylist2.print_sorted()
+[-6, -1, 0, 5]
