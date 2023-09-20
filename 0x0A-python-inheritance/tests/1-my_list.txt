@@ -20,3 +20,26 @@ True
 >>> mylist2 = MyList((0, 5, -1, -6))
 >>> mylist2.print_sorted()
 [-6, -1, 0, 5]
+
+::
+>>> mylist3 = MyList()
+>>> mylist3.print_sorted()
+[]
+
+::
+>>> mylist4 = MyList()
+>>> mylist4.append(5)
+>>> mylist4.append(0)
+>>> mylist4.append(-1)
+>>> mylist4.append(9)
+>>> mylist4
+[5, 0, -1, 9]
+>>> mylist4.print_sorted()
+[-1, 0, 5, 9]
+
+::
+>>> mylist6 = MyList((6, -1, 9, 0))
+>>> sorted_mylist6 = mylist6.print_sorted()
+[-1, 0, 6, 9]
+>>> sorted_mylist6
+[-1, 0, 6, 9]
