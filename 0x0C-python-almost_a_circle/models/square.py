@@ -27,3 +27,27 @@ class Square(Rectangle):
     def __str__(self):
         string = "[Square] ({}) {}/{} - {}"
         return string.format(self.id, self.x, self.y, self.__size)
+
+    def update(self, *args, **kwargs):
+        super().update(*args, **kwargs)
+        if args is not None:
+            if len(args) == 1:
+                id = args[0]
+                super().update(id)
+
+            elif len(args) == 2:
+                id, size = args
+                self.__size = size
+                super().update(id, size, size)
+
+            elif len(args) == 3:
+                id, size, x = args
+                super().update(id, size, size, x)
+
+            elif len(args) == 4:
+                id, size, x, y = args
+                super().update(id, size, size, x, y)
+
+        if kwargs is not None:
+            if kwargs.get("size", None):
+                self.__size = kwargs["size"]
