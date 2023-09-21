@@ -58,4 +58,12 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """Return the dict representation of Rectangle"""
-        
+        dict_r = super().to_dictionary()
+        dict_s = {}
+        for attr, value in dict_r.items():
+            if "size" in attr:
+                dict_s[attr.replace("_Square__", "")] = value
+            else:
+                dict_s[attr] = value
+
+        return dict_s
