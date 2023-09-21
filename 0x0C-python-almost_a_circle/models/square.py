@@ -59,8 +59,8 @@ class Square(Rectangle):
     def to_dictionary(self):
         """Return the dict representation of Rectangle"""
         dict_r = super().to_dictionary()
-        dict_r = dict_r.pop("width")
-        dict_r = dict_r.pop("height")
+        dict_r.pop("width")
+        dict_r.pop("height")
         dict_s = {}
         for attr, value in dict_r.items():
             if "size" in attr:
