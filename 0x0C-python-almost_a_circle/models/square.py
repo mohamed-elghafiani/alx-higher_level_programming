@@ -25,10 +25,12 @@ class Square(Rectangle):
         self.__size = value
 
     def __str__(self):
+        """Return the string representation of the Square instance"""
         string = "[Square] ({}) {}/{} - {}"
         return string.format(self.id, self.x, self.y, self.__size)
 
     def update(self, *args, **kwargs):
+        """Update instance's attributes"""
         super().update(*args, **kwargs)
         if args is not None:
             if len(args) == 1:
