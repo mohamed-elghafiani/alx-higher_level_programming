@@ -77,7 +77,19 @@ class Base():
         with open(cls.__name__ + ".csv", "w") as file:
             for obj in list_objs:
                 obj_dict = obj.to_dictionary()
-                file.write(",".join(map(str, obj_dict.values())) + "\n")
+                obj_list = []
+                if cls.__name__ == "Rectangle":
+                    obj_list.append(obj_dict["id"])
+                    obj_list.append(obj_dict["width"])
+                    obj_list.append(obj_dict["height"])
+                    obj_list.append(obj_dict["x"])
+                    obj_list.append(obj_dict["y"])
+                if cls.__name__ == "Square":
+                    obj_list.append(obj_dict["id"])
+                    obj_list.append(obj_dict["size"])
+                    obj_list.append(obj_dict["x"])
+                    obj_list.append(obj_dict["y"])
+                file.write(",".join(map(str, obj_list)) + "\n")
 
     @classmethod
     def load_from_file_csv(cls):
@@ -87,7 +99,7 @@ class Base():
         try:
             with open(filename + ".csv") as file:
                 objs_list = []
-                for obj in file.read():
+                for obj in file.readlines():
                     objs_list.append(list(map(int, obj.split(","))))
                 objs_dict = []
                 for obj in objs_list:
