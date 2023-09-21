@@ -2,6 +2,11 @@
 """ 10-main """
 from models.square import Square
 
+
+def get_writeable_properties(cls):
+    return [attr for attr, value in vars(cls).items()
+                 if isinstance(value, property) and value.fset is not None]
+
 if __name__ == "__main__":
 
     s1 = Square(5)
@@ -10,9 +15,8 @@ if __name__ == "__main__":
     s1.size = 10
     print(s1)
     
-    for value in vars(s1):
-        if isinstance(value, property):
-            print(value)
+    print(get_writeable_properties(s1))
+
     
     try:
         s1.size = "9"
