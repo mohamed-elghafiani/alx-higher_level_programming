@@ -66,3 +66,49 @@ class Base():
             objs[i] = cls.create(**obj_dict)
 
         return objs
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Save list_objs to CSV file"""
+        if not list_objs:
+            with open(cls.__name__ + ".csv", "x"):
+                return
+
+        with open(cls.__name__ + ".csv", "w") as file:
+            for obj in list_objs:
+                obj_dict = obj.to_dictionary()
+                file.write(",".join(map(str, obj_dict.values())) + "\n")
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Loads objs from CSV file"""
+        filename = cls.__name__
+        objs = []
+        try:
+            with open(filename + ".csv") as file:
+                objs_list = []
+                for obj in file.read():
+                    objs_list.append(list(map(int, obj.split(","))))
+                objs_dict = []
+                for obj in objs_list:
+                    obj_dict = {}
+                    obj_dict["id"] = obj[0]
+                    if filename == "Rectangle":
+                        obj_dict["width"] = obj[1]
+                        obj_dict["height"] = obj[2]
+                        obj_dict["x"] = obj[3]
+                        obj_dict["y"] = obj[4]
+                    if filename == "Square":
+                        obj_dict["size"] = obj[1]
+                        obj_dict["x"] = obj[2]
+                        obj_dict["y"] = obj[3]
+
+                    objs_dict.append(obj_dict)
+
+                for i, obj_dict in enumerate(objs_dict):
+                    objs.append(cls.create(**obj_dict))
+
+        except FileNotFoundError:
+            return []
+
+        return objs
