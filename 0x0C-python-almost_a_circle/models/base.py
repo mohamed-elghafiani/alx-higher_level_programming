@@ -65,4 +65,4 @@ class Base():
         for i, obj_dict in enumerate(objs):
             objs[i] = cls.create(**obj_dict)
 
-        return objs        
+        return objs
