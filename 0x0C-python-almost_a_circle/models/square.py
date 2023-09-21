@@ -55,3 +55,7 @@ class Square(Rectangle):
         if kwargs is not None:
             if kwargs.get("size", None):
                 self.__size = kwargs["size"]
+
+    def to_dictionary(self):
+        """Return the dict representation of Rectangle"""
+        

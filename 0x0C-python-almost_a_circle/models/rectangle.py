@@ -202,3 +202,10 @@ class Rectangle(Base):
                 self.__x = x
             if y:
                 self.__y = y
+
+    def to_dictionary(self):
+        """Return the dict representation of Rectangle"""
+        dict_r = {}
+        for attr, value in self.__dict__.items():
+            dict_r[attr.replace("_Rectangle__", "")] = value
+        return dict_r
