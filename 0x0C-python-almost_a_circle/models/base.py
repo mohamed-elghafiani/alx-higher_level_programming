@@ -37,3 +37,8 @@ class Base():
             list_dict = "[]"
         with open(cls.__name__ + ".json", "w") as file:
             file.write(list_dict)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """returns the list of the JSON string representation json_string"""
+        return json.loads(json_string)
