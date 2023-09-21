@@ -44,10 +44,12 @@ class Square(Rectangle):
 
             elif len(args) == 3:
                 id, size, x = args
+                self.__size = size
                 super().update(id, size, size, x)
 
             elif len(args) == 4:
                 id, size, x, y = args
+                self.__size = size
                 super().update(id, size, size, x, y)
 
         if kwargs is not None:
