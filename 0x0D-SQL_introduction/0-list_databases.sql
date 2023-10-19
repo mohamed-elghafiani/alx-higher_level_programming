@@ -1,1 +1,1 @@
-SELECT name FROM master.dbo.sysdatabases
+SHOW DATABASES;
