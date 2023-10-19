@@ -1,4 +1,2 @@
 -- Full description of table
-SELECT COLUMN_NAME, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, IS_NULLABLE
-FROM information_schema.COLUMNS
-WHERE TABLE_SCHEMA = 'hbtn_0c_0' AND TABLE_NAME = 'first_table';
+SHOW CREATE TABLE hbtn_0c_0.first_table;
