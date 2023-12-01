@@ -1,3 +1,3 @@
 #!/bin/bash
 # curl - dispaly status code only
-curl -sI "$1" | grep -Po 'HTTP/\d\.\d \K\d+'
+curl -s -o /dev/null -w "%{http_code}\n" "$1"
