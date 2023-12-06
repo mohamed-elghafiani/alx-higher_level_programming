@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 # Technical interview preparation:
-# Finding a peak in a list of unsorted integers.
+""" Finding a peak in a list of unsorted integers. """
 
 def find_peak(list_of_integers):
+    """Return the peak in a list_of_integers"""
     if not list_of_integers:
         return None
 
