@@ -8,7 +8,8 @@ import urllib.request
 import sys
 
 
-argv = sys.argv
-with urllib.request.urlopen(argv[1]) as req:
-    x_request_id = dict(req.headers._headers)["X-Request-Id"]
-    print(x_request_id)
+if __name__ == "__main__":
+    argv = sys.argv
+    with urllib.request.urlopen(argv[1]) as req:
+        x_request_id = dict(req.headers._headers)["X-Request-Id"]
+        print(x_request_id)
