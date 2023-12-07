@@ -1,7 +1,10 @@
 #!/usr/bin/python3
-"""Search API"""
+"""
+    Search API
+"""
 import requests
 import sys
+
 
 q = "" if len(sys.argv) < 2 else sys.argv[1]
 url = "http://0.0.0.0:5000/search_user"
