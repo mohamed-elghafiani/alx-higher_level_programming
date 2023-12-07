@@ -5,9 +5,9 @@ import requests.exceptions
 import sys
 
 
-if __name__ == "__main__"
+if __name__ == "__main__":
     try:
-        with requests.get(req) as res:
+        with requests.get(sys.argv[1]) as res:
             print(res.text)
     except requests.exceptions.HTTPError as e:
         print(f"Error code: {e.code}")
