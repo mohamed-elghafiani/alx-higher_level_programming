@@ -15,7 +15,7 @@ if __name__ == "__main__":
 
     with requests.post(url, data={"q": q}) as res:
         if not res.headers.get('content-Type') == 'application/json':
-            print("Not a validd JSON")
+            print("Not a valid JSON")
         elif len(res.json()) == 0:
             print("No result")
         else:
