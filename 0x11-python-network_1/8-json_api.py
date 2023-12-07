@@ -19,5 +19,4 @@ if __name__ == "__main__":
         elif res.json() == {}:
             print("No result")
         else:
-            print(res.json())
             print(f"[{res.json().get('id')}] {res.json().get('name')}")
