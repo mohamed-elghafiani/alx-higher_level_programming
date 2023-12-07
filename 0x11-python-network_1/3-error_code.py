@@ -6,9 +6,9 @@ import sys
 
 
 if __name__ == "__main__":
-    req = urllib.request.Request('http://www.python.org/fish.html')
+    req = urllib.request.Request(arg[1])
     try:
-        body = urllib.request.urlopen(req)
-        print(body.read().decode("utf-8"))
+        with urllib.request.urlopen(req) as res:
+            print(res.read().decode("utf-8"))
     except urllib.error.HTTPError as e:
         print(f"Error code: {e.code}")
